@@ -1,0 +1,28 @@
+#Task 2:s
+#---------- Iterative Approach ----------
+def fibonacci_iterative(n):
+    fib_series = []
+    a, b = 0, 1
+    for _ in range(n):
+        fib_series.append(a)
+        a, b = b, a + b
+    return fib_series
+#---------- Recursive Approach ----------
+def fibonacci_recursive(n):
+    if n <= 1:
+        return n
+    else:
+        return fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
+#---------- Main Program ----------
+n = 30
+
+#Iterative
+print("Fibonacci Series using Iterative approach:")
+print(fibonacci_iterative(n))
+
+#Recursive
+print("\nFibonacci Series using Recursive approach:")
+fib_recursive_series = []
+for i in range(n):
+    fib_recursive_series.append(fibonacci_recursive(i))
+print(fib_recursive_series)

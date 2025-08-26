@@ -1,0 +1,22 @@
+# Task 4:
+def prime_factors(n):
+    factors = []
+    #Step 1:
+    while n % 2 == 0:
+        factors.append(2)
+        n = n // 2
+    #Step 2:
+    i = 3
+    while i * i <= n:
+        while n % i == 0:
+            factors.append(i)
+            n = n // i
+        i += 2
+    #Step 3: If n is still greater than 2, it's prime
+    if n > 2:
+        factors.append(n)
+
+    return factors
+#---------- Main Program ----------
+num = int(input("Enter a number: "))
+print("Prime factors of", num, "are:", prime_factors(num))
